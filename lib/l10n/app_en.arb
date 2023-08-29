@@ -1,0 +1,14 @@
+{
+  "appsetting": "Setting",
+  "isdone": "Done!",
+  "newtask": "Add new task",
+  "edittask": "Edit Task",
+  "titlelabel": "Enter task title",
+  "describtionlabel": "Enter task descrebition",
+  "selecttime": "select time",
+  "language": "Language",
+  "mode": "Mode",
+  "arabic": "Arabic",
+    "edit": "Edit",
+    "delete": "Delete"
+}

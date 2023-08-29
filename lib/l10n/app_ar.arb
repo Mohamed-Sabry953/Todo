@@ -1,0 +1,14 @@
+{
+  "appsetting": "الاعدادات",
+  "isdone": "تم!",
+  "newtask": "أضف مهمة جديدة",
+  "edittask": "تعديل المهمة",
+  "titlelabel": "ادخل عنوان المهمة",
+  "describtionlabel": "ادخل وصف المهمة",
+  "selecttime": "اختر الوقت",
+  "language": "اللغة",
+  "mode": "الوضع",
+  "arabic": "عربى",
+    "edit": "تعديل",
+    "delete": "حذف"
+}
