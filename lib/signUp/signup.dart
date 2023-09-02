@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:todo/Shared/network/Firebase/firebaseFunictions.dart';
+import 'package:todo/login/LoginPage.dart';
 
 class Signup extends StatelessWidget {
   static const String routeName='signup';
+
   var formkey=GlobalKey<FormState>();
   final TextEditingController pass=TextEditingController();
+  final TextEditingController email=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +45,6 @@ class Signup extends StatelessWidget {
                 Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
-                      validator:validateEmail,
                       decoration: InputDecoration(
                         labelText: 'Username',
                         enabledBorder: OutlineInputBorder(
@@ -55,6 +58,7 @@ class Signup extends StatelessWidget {
                 Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
+                      controller: email,
                       validator:validateEmail,
                       decoration: InputDecoration(
                         labelText: 'Email',
@@ -120,7 +124,11 @@ class Signup extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       if(formkey.currentState!.validate()){
-
+                        firebaseFunictions.Signup(email.text, pass.text,(){
+                          Navigator.pop(context);
+                        }).catchError((e){
+                          print('error');
+                        });
                       }
                     },
                     child: Text(
@@ -187,7 +195,7 @@ class Signup extends StatelessWidget {
   }
   String? validateMobile(String? value) {
 // Indian Mobile number are of 10 digit only
-    if (value!.length != 10)
+    if (value!.length != 11)
       return 'Mobile Number must be of 10 digit';
     else {
       return null;
