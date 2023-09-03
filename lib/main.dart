@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
       theme: MyThemeData.lightmode,
       darkTheme: MyThemeData.darkmode,
       themeMode: provider.mode,
-      initialRoute:Login.routeName,
+      initialRoute:provider.firebaseuser!=null?Homelayout.routeName:Login.routeName,
       routes: {
         Homelayout.routeName:(context)=>Homelayout(),
         editTask.routeName:(context)=>editTask(),
