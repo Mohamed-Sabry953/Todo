@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todo/Shared/network/Firebase/firebaseFunictions.dart';
@@ -191,6 +192,7 @@ class _editTaskState extends State<editTask> {
                             .updateTask(
                                 args.id.toString(),
                                 TaskModel(
+                                  UserId: FirebaseAuth.instance.currentUser!.uid,
                                     id: args.id.toString(),
                                     title: editTitle,
                                     descrebtion: editdescrebtion,

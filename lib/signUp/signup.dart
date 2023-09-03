@@ -8,6 +8,8 @@ class Signup extends StatelessWidget {
   var formkey=GlobalKey<FormState>();
   final TextEditingController pass=TextEditingController();
   final TextEditingController email=TextEditingController();
+  final TextEditingController Phone=TextEditingController();
+  final TextEditingController Name=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,6 +47,7 @@ class Signup extends StatelessWidget {
                 Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
+                      controller: Name,
                       decoration: InputDecoration(
                         labelText: 'Username',
                         enabledBorder: OutlineInputBorder(
@@ -73,6 +76,7 @@ class Signup extends StatelessWidget {
                 Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
+                      controller: Phone,
                       validator:validateMobile,
                       keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
@@ -124,7 +128,7 @@ class Signup extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       if(formkey.currentState!.validate()){
-                        firebaseFunictions.Signup(email.text, pass.text,(){
+                        firebaseFunictions.Signup(Name.text,email.text, pass.text,int.parse(Phone.text),(){
                           Navigator.pop(context);
                         }).catchError((e){
                           print('error');

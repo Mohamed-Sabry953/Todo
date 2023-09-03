@@ -82,7 +82,7 @@ class Login extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       if(formkey.currentState!.validate()){
-                        firebaseFunictions.Loign(emailcontroler.text, passcontroler.text, (){
+                        firebaseFunictions.Login(emailcontroler.text, passcontroler.text, (){
                           Navigator.pushNamedAndRemoveUntil(context, Homelayout.routeName, (route) => false);
                         }).catchError((e){
                           Text(e.toString());

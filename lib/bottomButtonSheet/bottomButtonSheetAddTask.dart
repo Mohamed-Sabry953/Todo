@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todo/Shared/network/Firebase/firebaseFunictions.dart';
@@ -157,6 +158,7 @@ class _bottomButtonSheetState extends State<bottomButtonSheet> {
                   TaskModel Task = TaskModel(
                     id: firebaseFunictions.getTasksCollection().id,
                       title: titlecontroler.text,
+                      UserId: FirebaseAuth.instance.currentUser!.uid,
                       descrebtion: descrebtioncontroler.text,
                       date: DateUtils.dateOnly(selcetedDate).millisecondsSinceEpoch,
                       IsDone: false);

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -45,6 +46,7 @@ class _ListCardState extends State<ListCard> {
               onPressed: (context) {
                 Navigator.pushNamed(context, editTask.routeName,
                     arguments: TaskModel(
+                      UserId: FirebaseAuth.instance.currentUser!.uid,
                         title: widget.Taskmodel.title,
                         descrebtion: widget.Taskmodel.descrebtion,
                         date: widget.Taskmodel.date,
@@ -109,6 +111,7 @@ class _ListCardState extends State<ListCard> {
                     firebaseFunictions.updateTask(
                         widget.Taskmodel.id,
                         TaskModel(
+                          UserId: FirebaseAuth.instance.currentUser!.uid,
                             title: widget.Taskmodel.title,
                             descrebtion: widget.Taskmodel.descrebtion,
                             date: widget.Taskmodel.date,
