@@ -3,7 +3,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todo/Homelayout.dart';
-import 'package:todo/Taps/ListTap/listTap.dart';
 import 'package:todo/Taps/editTap.dart';
 import 'package:todo/login/LoginPage.dart';
 import 'package:todo/provider/settingprovider.dart';
