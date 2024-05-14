@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:todo/Taps/SettingTap.dart';
 import 'package:todo/Taps/ListTap/listTap.dart';
 import 'package:todo/bottomButtonSheet/bottomButtonSheetAddTask.dart';
-import 'package:todo/login/LoginPage.dart';
 import 'package:todo/provider/settingprovider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class Homelayout extends StatefulWidget {
@@ -25,10 +24,6 @@ class _HomelayoutState extends State<Homelayout> {
       appBar: AppBar(
         title: Text(currentindex == 0 ? 'ToDoList' : AppLocalizations.of(context)!.appsetting),
         actions: [
-          IconButton(onPressed:(){
-            provider.Logout();
-            Navigator.pushNamedAndRemoveUntil(context, Login.routeName, (route) => false);
-          }, icon: Icon(Icons.login_outlined),iconSize: 30,)
         ],
       ),
       bottomNavigationBar: BottomAppBar(

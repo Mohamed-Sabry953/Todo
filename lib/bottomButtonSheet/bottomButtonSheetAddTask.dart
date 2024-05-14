@@ -158,7 +158,6 @@ class _bottomButtonSheetState extends State<bottomButtonSheet> {
                   TaskModel Task = TaskModel(
                     id: firebaseFunictions.getTasksCollection().id,
                       title: titlecontroler.text,
-                      UserId: FirebaseAuth.instance.currentUser!.uid,
                       descrebtion: descrebtioncontroler.text,
                       date: DateUtils.dateOnly(selcetedDate).millisecondsSinceEpoch,
                       IsDone: false);

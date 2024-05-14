@@ -190,9 +190,8 @@ class _editTaskState extends State<editTask> {
                       onTap: () {
                         firebaseFunictions
                             .updateTask(
-                                args.id.toString(),
+                                args.id,
                                 TaskModel(
-                                  UserId: FirebaseAuth.instance.currentUser!.uid,
                                     id: args.id.toString(),
                                     title: editTitle,
                                     descrebtion: editdescrebtion,

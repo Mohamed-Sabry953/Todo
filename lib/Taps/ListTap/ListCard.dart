@@ -46,7 +46,6 @@ class _ListCardState extends State<ListCard> {
               onPressed: (context) {
                 Navigator.pushNamed(context, editTask.routeName,
                     arguments: TaskModel(
-                      UserId: FirebaseAuth.instance.currentUser!.uid,
                         title: widget.Taskmodel.title,
                         descrebtion: widget.Taskmodel.descrebtion,
                         date: widget.Taskmodel.date,
@@ -111,13 +110,19 @@ class _ListCardState extends State<ListCard> {
                     firebaseFunictions.updateTask(
                         widget.Taskmodel.id,
                         TaskModel(
-                          UserId: FirebaseAuth.instance.currentUser!.uid,
                             title: widget.Taskmodel.title,
                             descrebtion: widget.Taskmodel.descrebtion,
                             date: widget.Taskmodel.date,
                             IsDone: true,
                             id: widget.Taskmodel.id));
                   },
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: widget.Taskmodel.IsDone == false
+                          ? MyThemeData.light
+                          : Colors.green,
+                      fixedSize: Size(80, 45),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25))),
                   child: widget.Taskmodel.IsDone == false
                       ? Icon(
                           Icons.done,
@@ -127,13 +132,6 @@ class _ListCardState extends State<ListCard> {
                           style: TextStyle(
                               fontSize: 14, fontWeight: FontWeight.w600),
                         ),
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: widget.Taskmodel.IsDone == false
-                          ? MyThemeData.light
-                          : Colors.green,
-                      fixedSize: Size(80, 45),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25))),
                 )
               ],
             ),

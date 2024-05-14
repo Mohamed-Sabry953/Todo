@@ -4,9 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todo/Homelayout.dart';
 import 'package:todo/Taps/editTap.dart';
-import 'package:todo/login/LoginPage.dart';
 import 'package:todo/provider/settingprovider.dart';
-import 'package:todo/signUp/signup.dart';
 import 'package:todo/themes/ThemeData.dart';
 import 'firebase_options.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -44,12 +42,10 @@ class MyApp extends StatelessWidget {
       theme: MyThemeData.lightmode,
       darkTheme: MyThemeData.darkmode,
       themeMode: provider.mode,
-      initialRoute:provider.firebaseuser!=null?Homelayout.routeName:Login.routeName,
+      initialRoute:Homelayout.routeName,
       routes: {
         Homelayout.routeName:(context)=>Homelayout(),
         editTask.routeName:(context)=>editTask(),
-        Login.routeName:(context)=>Login(),
-        Signup.routeName:(context)=>Signup(),
       },
     );
   }
